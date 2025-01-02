@@ -7,3 +7,6 @@ test('math', test_math)
 
 test_vector2 = executable('test_vector2', 'tests/test_vector2.cpp', include_directories : xyz)
 test('vector2', test_vector2)
+
+test_grid = executable('test_grid', 'tests/test_grid.cpp', include_directories : xyz)
+test('grid', test_grid)
