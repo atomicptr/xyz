@@ -9,18 +9,19 @@ struct Test {
 
 int main() {
     auto g = xyz::grid<int>(10, 10);
-    expect_equals(0, g.get(3, 3));
-    g.set(3, 3, 100);
-    expect_equals(100, g.get(3, 3));
+    expect_equals(0, (g[3, 3]));
+    g[3, 3] = 100;
+    expect_equals(100, (g[3, 3]));
+
 
     auto g2 = xyz::grid<Test>(5, 5);
-    expect_equals(0, g2.get(1, 1).x); // sub values are setup using default values
-    g2.set(1, 1, { 10, 12});
-    expect_equals(10, g2.get(1, 1).x);
-    expect_equals(12, g2.get(1, 1).y);
+    expect_equals(0, (g2[1, 1].x)); // sub values are setup using default values
+    g2[1, 1] = {10, 12};
+    expect_equals(10, (g2[1, 1]).x);
+    expect_equals(12, (g2[1, 1]).y);
 
     auto g3 = xyz::grid<Test*>(5, 5);
-    expect_equals((Test*)nullptr, g3.get(1, 1));
+    expect_equals((Test*)nullptr, (g3[1, 1]));
 
     return 0;
 }
