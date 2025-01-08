@@ -1,9 +1,9 @@
 # xyz
 
-Custom C++ standard library with stuff that I kinda write often
+Custom C++ standard library
 
 - Header only, just pick what you need (some components might be dependant on others)
-- No dependencies
+- No external dependencies
 
 ## License
 
