@@ -1,7 +1,8 @@
 #pragma once
 
 #include <cassert>
-#include <vector>
+
+#include "array.hpp"
 
 namespace xyz {
     inline unsigned int grid_index(unsigned int width, unsigned int x, unsigned int y) {
@@ -13,13 +14,12 @@ namespace xyz {
     public:
         grid(unsigned int width, unsigned int height) : grid(width, height, T()) {}
 
-        grid(unsigned int width, unsigned int height, T default_value) : width(width), height(height) {
+        grid(unsigned int width, unsigned int height, T default_value) : data(width*height), width(width), height(height) {
             assert(width >= 1);
             assert(height >= 1);
-            
-            data.reserve(width * height);
-            for (unsigned int i = 0; i < width * height; i++) {
-                data.push_back(default_value);
+
+            for (auto i = 0u; i < width * height; i++) {
+                data[i] = default_value;
             }
         }
 
@@ -29,7 +29,7 @@ namespace xyz {
             return data[grid_index(width, x, y)];
         }
     private:
-        std::vector<T> data;
+        array<T> data;
         unsigned int width;
         unsigned int height;
     };
