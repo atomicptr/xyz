@@ -29,5 +29,8 @@ int main() {
         index++;
     }
 
+    expect_true(arr2 != arr3);
+    expect_true((arr3 == xyz::array{0, 1, 4, 9, 16, 25}));
+
     return 0;
 }
