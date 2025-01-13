@@ -40,7 +40,7 @@ namespace xyz {
     }
 
     inline bool float_equals(float x, float y) {
-        return fabsf(x - y) < epsilon;
+        return std::abs(x - y) < epsilon;
     }
 
     inline float lerp(float start, float end, float amount) {
