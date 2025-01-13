@@ -13,3 +13,6 @@ test('array', test_array)
 
 test_grid = executable('test_grid', 'tests/test_grid.cpp', include_directories : xyz)
 test('grid', test_grid)
+
+test_bitfield = executable('test_bitfield', 'tests/test_bitfield.cpp', include_directories : xyz)
+test('bitfield', test_bitfield)
