@@ -1,6 +1,7 @@
 #include "result.hpp"
 #include "vector2.hpp"
 
+#include "vector2_iostream.hpp"
 #include "base.hpp"
 
 int main() {

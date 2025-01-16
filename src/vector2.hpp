@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <math.h>
 
 #include "math.hpp"
@@ -172,9 +171,4 @@ namespace xyz {
             return { xyz::clamp(x, min, max), xyz::clamp(y, min, max) };
         }
     };
-}
-
-inline std::ostream& operator<<(std::ostream& os, const xyz::Vector2& vec) {
-    os << "Vector2 { x = " << vec.x << ", y = " << vec.y << " }";
-    return os;
 }
