@@ -1,3 +1,9 @@
+/**
+ * xyz: My custom C++ standard library
+ *
+ * Repository: https://github.com/atomicptr/xyz
+ * License:    MIT
+ */
 #pragma once
 
 #include <cstdint>
