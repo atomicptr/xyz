@@ -36,6 +36,7 @@ namespace xyz {
         }
 
         const T* operator->() const {
+            assert(has_value);
             return &data;
         }
     private:

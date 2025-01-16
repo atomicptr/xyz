@@ -19,3 +19,6 @@ test('bitfield', test_bitfield)
 
 test_option = executable('test_option', 'tests/test_option.cpp', include_directories : xyz)
 test('option', test_option)
+
+test_result = executable('test_result', 'tests/test_result.cpp', include_directories : xyz)
+test('result', test_result)
