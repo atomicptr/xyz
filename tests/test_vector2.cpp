@@ -1,12 +1,5 @@
 #include "vector2.hpp"
 
-#include <iostream>
-
-std::ostream& operator<<(std::ostream& os, const xyz::Vector2& vec) {
-    os << "Vector2 { x = " << vec.x << ", y = " << vec.y << " }";
-    return os;
-}
-
 #include  "base.hpp"
 
 using namespace xyz;

@@ -16,3 +16,6 @@ test('grid', test_grid)
 
 test_bitfield = executable('test_bitfield', 'tests/test_bitfield.cpp', include_directories : xyz)
 test('bitfield', test_bitfield)
+
+test_option = executable('test_option', 'tests/test_option.cpp', include_directories : xyz)
+test('option', test_option)
