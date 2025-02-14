@@ -3,13 +3,13 @@
 #include "base.hpp"
 
 int main() {
-    auto arr1 = xyz::array<int>(10);
+    auto arr1 = xyz::Array<int>(10);
     expect_equals(10u, arr1.length());
     expect_equals(0, arr1[5]);
     arr1[5] = 100;
     expect_equals(100, arr1[5]);
 
-    auto arr2 = xyz::array{1, 2, 3, 4, 5};
+    auto arr2 = xyz::Array{1, 2, 3, 4, 5};
     expect_equals(5u, arr2.length());
     expect_equals(3, arr2[2]);
 
@@ -21,7 +21,7 @@ int main() {
     expect_equals(100, arr2[9]);
 
     auto index = 0;
-    auto arr3 = xyz::array{0, 1, 4, 9, 16, 25};
+    auto arr3 = xyz::Array{0, 1, 4, 9, 16, 25};
     for (auto arg : arr3) {
         auto expected = index * index;
         expect_equals(expected, arg);
@@ -30,7 +30,7 @@ int main() {
     }
 
     expect_true(arr2 != arr3);
-    expect_true((arr3 == xyz::array{0, 1, 4, 9, 16, 25}));
+    expect_true((arr3 == xyz::Array{0, 1, 4, 9, 16, 25}));
 
     return 0;
 }

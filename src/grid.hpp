@@ -16,11 +16,11 @@ namespace xyz {
     }
     
     template<typename T>
-    class grid {
+    class Grid {
     public:
-        grid(unsigned int width, unsigned int height) : grid(width, height, T()) {}
+        Grid(unsigned int width, unsigned int height) : Grid(width, height, T()) {}
 
-        grid(unsigned int width, unsigned int height, T default_value) : data(width*height), width(width), height(height) {
+        Grid(unsigned int width, unsigned int height, T default_value) : data(width*height), width(width), height(height) {
             assert(width >= 1);
             assert(height >= 1);
 
@@ -35,7 +35,7 @@ namespace xyz {
             return data[grid_index(width, x, y)];
         }
     private:
-        array<T> data;
+        Array<T> data;
         unsigned int width;
         unsigned int height;
     };

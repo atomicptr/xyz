@@ -13,15 +13,15 @@
 namespace xyz {
 
     template<typename T>
-    class array {
+    class Array {
     public:
-        array(unsigned int length) {
+        Array(unsigned int length) {
             len = length;
             data = new T[len];
             clear();
         }
 
-        array(std::initializer_list<T> args) : array(args.size()) {
+        Array(std::initializer_list<T> args) : Array(args.size()) {
             clear();
             
             auto index = 0u;
@@ -30,7 +30,7 @@ namespace xyz {
             }
         }
 
-        ~array() {
+        ~Array() {
             delete data;
         }
 
@@ -48,7 +48,7 @@ namespace xyz {
             return data[index];
         }
 
-        bool operator==(const array<T>& other) const {
+        bool operator==(const Array<T>& other) const {
             if (length() != other.length()) {
                 return false;
             }
@@ -67,7 +67,7 @@ namespace xyz {
             return true;
         }
 
-        bool operator!=(const array<T>& other) const {
+        bool operator!=(const Array<T>& other) const {
             return !(*this == other);
         }
 
