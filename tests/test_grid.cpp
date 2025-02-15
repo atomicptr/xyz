@@ -1,6 +1,7 @@
 #include "grid.hpp"
 
 #include "base.hpp"
+#include "tests/buster.hpp"
 
 struct Test {
     int x;
@@ -22,6 +23,9 @@ int main() {
 
     auto g3 = xyz::Grid<Test*>(5, 5);
     expect_equals((Test*)nullptr, (g3[1, 1]));
+
+    const auto g4 = xyz::Grid<int>(5, 5);
+    expect_equals(0, (g4[3, 3]));
 
     return 0;
 }

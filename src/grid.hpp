@@ -34,6 +34,12 @@ namespace xyz {
             assert(y < height);
             return data[grid_index(width, x, y)];
         }
+
+        inline const T& operator[](unsigned int x, unsigned int y) const {
+            assert(x < width);
+            assert(y < height);
+            return data[grid_index(width, x, y)];
+        }
     private:
         Array<T> data;
         unsigned int width;
