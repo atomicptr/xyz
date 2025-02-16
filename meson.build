@@ -22,3 +22,6 @@ test('option', test_option)
 
 test_result = executable('test_result', 'tests/test_result.cpp', include_directories : xyz)
 test('result', test_result)
+
+test_print = executable('test_print', 'tests/test_print.cpp', include_directories : xyz)
+test('print', test_print)

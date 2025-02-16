@@ -24,8 +24,8 @@ namespace buster {
             std::abort();
         }
 
-        template<typename T>
-        inline bool is_equal(T a, T b) {
+        template<typename T, typename U>
+        inline bool is_equal(T a, U b) {
             return a == b;
         }
 
@@ -34,8 +34,8 @@ namespace buster {
             return std::abs(a - b) < 0.000001f;
         }
 
-        template<typename T>
-        inline void test_equals(T expected, T actual, std::string file, int line) {
+        template<typename T, typename U>
+        inline void test_equals(T expected, U actual, std::string file, int line) {
             if (is_equal(expected, actual)) {
                 print_pass(file, line);
                 return;

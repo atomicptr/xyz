@@ -17,7 +17,7 @@ namespace xyz {
     }
 
     template<class... Args>
-    inline void print(std::FILE* stream, std::format_string<Args...> fmt, Args&&... args) {
+    inline void print(std::ostream& stream, std::format_string<Args...> fmt, Args&&... args) {
         stream << std::format(fmt, args...);
     }
 
@@ -27,7 +27,7 @@ namespace xyz {
     }
 
     template<class... Args>
-    inline void println(std::FILE* stream, std::format_string<Args...> fmt, Args&&... args) {
+    inline void println(std::ostream& stream, std::format_string<Args...> fmt, Args&&... args) {
         stream << std::format(fmt, args...) << std::endl;
     }
 }
