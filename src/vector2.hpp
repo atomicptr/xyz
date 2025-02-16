@@ -1,5 +1,6 @@
 /**
- * xyz: My custom C++ standard library
+ * xyz: Collection of C++23 utilities
+ * File: vector2.hpp - 2D Vector class
  *
  * Repository: https://github.com/atomicptr/xyz
  * License:    MIT
@@ -16,55 +17,55 @@ namespace xyz {
         float y;
 
         inline static Vector2 zero() {
-            return { 0.0f, 0.0f };
+            return {0.0f, 0.0f};
         }
 
         inline static Vector2 one() {
-            return { 1.0f, 1.0f };
+            return {1.0f, 1.0f};
         }
 
         inline static Vector2 up() {
-            return { 0.0f, -1.0f };
+            return {0.0f, -1.0f};
         }
 
         inline static Vector2 down() {
-            return { 0.0f, 1.0f };
+            return {0.0f, 1.0f};
         }
 
         inline static Vector2 left() {
-            return { -1.0f, 0.0f };
+            return {-1.0f, 0.0f};
         }
 
         inline static Vector2 right() {
-            return { 1.0f, 0.0f };
+            return {1.0f, 0.0f};
         }
 
         inline const Vector2 operator+(const Vector2& other) const {
-            return { x + other.x, y + other.y };
+            return {x + other.x, y + other.y};
         }
 
         inline const Vector2 operator+(float value) const {
-            return { x + value, y + value };
+            return {x + value, y + value};
         }
 
         inline const Vector2 operator-(const Vector2& other) const {
-            return { x - other.x, y - other.y };
+            return {x - other.x, y - other.y};
         }
 
         inline const Vector2 operator-(float value) const {
-            return { x - value, y - value };
+            return {x - value, y - value};
         }
 
         inline const Vector2 operator*(const Vector2& other) const {
-            return { x * other.x, y * other.y };
+            return {x * other.x, y * other.y};
         }
 
         inline const Vector2 operator*(float value) const {
-            return { x * value, y * value };
+            return {x * value, y * value};
         }
 
         inline const Vector2 operator/(const Vector2& other) const {
-            return { x / other.x, y / other.y };
+            return {x / other.x, y / other.y};
         }
 
         inline const Vector2 operator/(float value) const {
@@ -83,7 +84,7 @@ namespace xyz {
             if (this == &other) {
                 return *this;
             }
-            
+
             x = other.x;
             y = other.y;
 
@@ -164,17 +165,15 @@ namespace xyz {
         inline Vector2 move_towards(const Vector2& target, float delta) const {
             auto dest = target - *this;
             auto len = dest.length();
-            return len <= delta || len < epsilon
-                ? target
-                : *this + (dest / len * delta);
+            return len <= delta || len < epsilon ? target : *this + (dest / len * delta);
         }
 
         inline Vector2 clamp(const Vector2& min, const Vector2& max) const {
-            return { xyz::clamp(x, min.x, max.x), xyz::clamp(y, min.y, max.y) };
+            return {xyz::clamp(x, min.x, max.x), xyz::clamp(y, min.y, max.y)};
         }
 
         inline Vector2 clamp(float min, float max) const {
-            return { xyz::clamp(x, min, max), xyz::clamp(y, min, max) };
+            return {xyz::clamp(x, min, max), xyz::clamp(y, min, max)};
         }
     };
 }

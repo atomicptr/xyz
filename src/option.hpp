@@ -1,5 +1,6 @@
 /**
- * xyz: My custom C++ standard library
+ * xyz: Collection of C++23 utilities
+ * File: option.hpp - Lightweight optional type for C++
  *
  * Repository: https://github.com/atomicptr/xyz
  * License:    MIT
@@ -10,7 +11,7 @@
 
 namespace xyz {
 
-    template<typename T>
+    template <typename T>
     class Option {
     public:
         static Option<T> some(T value) {
@@ -45,6 +46,7 @@ namespace xyz {
             assert(has_value);
             return &data;
         }
+
     private:
         T data;
         bool has_value;

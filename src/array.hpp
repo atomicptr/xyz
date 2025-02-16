@@ -1,18 +1,19 @@
 /**
- * xyz: My custom C++ standard library
+ * xyz: Collection of C++23 utilities
+ * File: array.hpp - Lightweight dynamic sized array which doesn't allocate without you noticing
  *
  * Repository: https://github.com/atomicptr/xyz
  * License:    MIT
  */
 #pragma once
 
+#include <algorithm>
 #include <cassert>
 #include <initializer_list>
-#include <algorithm>
 
 namespace xyz {
 
-    template<typename T>
+    template <typename T>
     class Array {
     public:
         Array(unsigned int length) {
@@ -23,7 +24,7 @@ namespace xyz {
 
         Array(std::initializer_list<T> args) : Array(args.size()) {
             clear();
-            
+
             auto index = 0u;
             for (auto arg : args) {
                 this->data[index++] = arg;
@@ -94,6 +95,7 @@ namespace xyz {
         const T* end() const {
             return data + len;
         }
+
     private:
         T* data;
         unsigned int len;

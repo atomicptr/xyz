@@ -1,5 +1,6 @@
 /**
- * xyz: My custom C++ standard library
+ * xyz: Collection of C++23 utilities
+ * File: result.hpp - Lightweight result type for C++
  *
  * Repository: https://github.com/atomicptr/xyz
  * License:    MIT
@@ -10,7 +11,7 @@
 
 namespace xyz {
 
-    template<typename T, typename Err = const char*>
+    template <typename T, typename Err = const char*>
     class Result {
     public:
         static Result<T, Err> ok(T data) {
@@ -50,6 +51,7 @@ namespace xyz {
             assert(!has_err);
             return &data;
         }
+
     private:
         T data;
         Err err;

@@ -1,5 +1,6 @@
 /**
- * xyz: My custom C++ standard library
+ * xyz: Collection of C++23 utilities
+ * File: bitfield.hpp - Wrapping class for handling bitfields using enum classes
  *
  * Repository: https://github.com/atomicptr/xyz
  * License:    MIT
@@ -10,7 +11,7 @@
 #include <type_traits>
 
 namespace xyz {
-    template<typename T, typename BackingType = uint32_t>
+    template <typename T, typename BackingType = uint32_t>
         requires std::is_enum_v<T> && std::is_integral_v<BackingType>
     class BitField {
     private:
@@ -19,6 +20,7 @@ namespace xyz {
         static constexpr BackingType bitPosition(T value) {
             return static_cast<BackingType>(value);
         }
+
     public:
         using backing_type = BackingType;
 
