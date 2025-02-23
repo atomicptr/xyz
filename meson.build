@@ -25,3 +25,6 @@ test('result', test_result)
 
 test_print = executable('test_print', 'tests/test_print.cpp', include_directories : xyz)
 test('print', test_print)
+
+test_pool = executable('test_pool', 'tests/test_pool.cpp', include_directories : xyz)
+test('pool', test_pool)
