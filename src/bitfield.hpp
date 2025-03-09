@@ -38,6 +38,22 @@ namespace xyz {
             bits &= ~(1u << bitPosition(value));
         }
 
+        void toggle(T value) {
+            if (has(value)) {
+                disable(value);
+                return;
+            }
+            enable(value);
+        }
+
+        void set_when(bool condition, T value) {
+            if (condition) {
+                enable(value);
+                return;
+            }
+            disable(value);
+        }
+
         BackingType value() const {
             return bits;
         }

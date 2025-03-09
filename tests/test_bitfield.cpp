@@ -58,5 +58,40 @@ int main() {
     expect_true(colors.has(Color::Green));
     expect_equals(static_cast<xyz::BitField<Color>::backing_type>(0b110), colors.value());
 
+    colors.toggle(Color::Red);
+
+    expect_true(colors.has(Color::Red));
+    expect_true(colors.has(Color::Blue));
+    expect_true(colors.has(Color::Green));
+    expect_equals(static_cast<xyz::BitField<Color>::backing_type>(0b111), colors.value());
+
+    colors.toggle(Color::Red);
+
+    expect_false(colors.has(Color::Red));
+    expect_true(colors.has(Color::Blue));
+    expect_true(colors.has(Color::Green));
+    expect_equals(static_cast<xyz::BitField<Color>::backing_type>(0b110), colors.value());
+
+    colors.set_when(true, Color::Red);
+
+    expect_true(colors.has(Color::Red));
+    expect_true(colors.has(Color::Blue));
+    expect_true(colors.has(Color::Green));
+    expect_equals(static_cast<xyz::BitField<Color>::backing_type>(0b111), colors.value());
+
+    colors.set_when(true, Color::Red);
+
+    expect_true(colors.has(Color::Red));
+    expect_true(colors.has(Color::Blue));
+    expect_true(colors.has(Color::Green));
+    expect_equals(static_cast<xyz::BitField<Color>::backing_type>(0b111), colors.value());
+
+    colors.set_when(false, Color::Red);
+
+    expect_false(colors.has(Color::Red));
+    expect_true(colors.has(Color::Blue));
+    expect_true(colors.has(Color::Green));
+    expect_equals(static_cast<xyz::BitField<Color>::backing_type>(0b110), colors.value());
+
     return 0;
 }

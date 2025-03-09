@@ -1,3 +1,10 @@
+/**
+ * xyz: Collection of C++23 utilities
+ * File: pool.hpp - Generic object pool implementation
+ *
+ * Repository: https://github.com/atomicptr/xyz
+ * License:    MIT
+ */
 #pragma once
 
 #include <array>
