@@ -14,9 +14,9 @@
 namespace buster {
     namespace internal {
         inline void print_pass(std::string file, int line) {
-            #ifndef BUSTER_NO_PASS_PRINT
+#ifndef BUSTER_NO_PASS_PRINT
             std::cout << "\t\033[32mPASS\033[0m\t" << file << ":" << line << std::endl;
-            #endif
+#endif
         }
 
         inline void print_fail(std::string file, int line, std::string reason) {
@@ -24,17 +24,17 @@ namespace buster {
             std::abort();
         }
 
-        template<typename T, typename U>
+        template <typename T, typename U>
         inline bool is_equal(T a, U b) {
             return a == b;
         }
 
-        template<>
+        template <>
         inline bool is_equal(float a, float b) {
             return std::abs(a - b) < 0.000001f;
         }
 
-        template<typename T, typename U>
+        template <typename T, typename U>
         inline void test_equals(T expected, U actual, std::string file, int line) {
             if (is_equal(expected, actual)) {
                 print_pass(file, line);
