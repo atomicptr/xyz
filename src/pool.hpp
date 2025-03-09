@@ -56,8 +56,8 @@ namespace xyz {
             throw std::runtime_error("pool is emtpy");
         }
 
-        auto items() {
-            return data | std::ranges::views::filter([](T& item) { return item.is_alive(); });
+        auto items() const {
+            return data | std::ranges::views::filter([](const T& item) { return item.is_alive(); });
         }
 
     private:
