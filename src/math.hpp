@@ -53,4 +53,9 @@ namespace xyz {
     inline float lerp(float start, float end, float amount) {
         return start + (end - start) * amount;
     }
+
+    template <Numeric T>
+    inline constexpr T sign(T value) {
+        return (value < T(0)) ? T(-1) : (value > T(0)) ? T(1) : T(0);
+    }
 }
