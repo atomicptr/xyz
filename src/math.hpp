@@ -58,4 +58,12 @@ namespace xyz {
     inline constexpr T sign(T value) {
         return (value < T(0)) ? T(-1) : (value > T(0)) ? T(1) : T(0);
     }
+
+    inline float move_towards(float current, float target, float max_delta) {
+        if (std::fabs(target - current) <= max_delta) {
+            return target;
+        }
+
+        return current + sign(target - current) * max_delta;
+    }
 }

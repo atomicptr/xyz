@@ -57,5 +57,16 @@ int main() {
     expect_true(xyz::sign(-555) < 0);
     expect_true(xyz::sign(0) == 0);
 
+    // move towards
+    auto current = 0.0f;
+    current = xyz::move_towards(current, 1.0f, 0.1f);
+    expect_equals(current, 0.1f);
+
+    current = xyz::move_towards(current, 1.0f, 0.1f);
+    expect_equals(current, 0.2f);
+
+    current = xyz::move_towards(current, 1.0f, 5.0f);
+    expect_equals(current, 1.0f);
+
     return 0;
 }
